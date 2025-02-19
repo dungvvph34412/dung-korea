@@ -19,6 +19,10 @@ class CheckAdminMiddleware
        if(Auth::check()){ // phai dang nhap
         if(Auth::user()->role == '1'){
         return $next($request);
+        }else{
+            return redirect()->route('login')->with([ //dang nhap that phai => return: login
+                'messageError' => 'chỉ Admin mới có thể đăng nhập'
+            ]);
         }
        }
        return redirect()->route('login')->with([ //dang nhap that phai => return: login

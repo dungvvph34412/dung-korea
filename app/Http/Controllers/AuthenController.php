@@ -18,8 +18,8 @@ class AuthenController extends Controller
         'email.required' => 'Email không được để trống',
         'email.email' => 'Email không đúng định dạng',
         'password.required' => 'Password không được để trống',
-        
-       ]);
+       ]
+    );
 
         if(Auth::attempt([
             'email' => $req->email,

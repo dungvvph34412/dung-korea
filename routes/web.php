@@ -30,6 +30,7 @@ Route::group([
     'as' => 'users.',        
     ], function(){
         Route::get('/', [UserController::class, 'listUsers'])->name('listUsers');
+        Route::post('add-user', [UserController::class, 'addUsers'])->name('addUsers');
 
     });
 });
